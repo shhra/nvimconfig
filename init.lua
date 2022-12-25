@@ -17,5 +17,3 @@ require "user.treesitter"
 
 -- custom folders
 require "user.lsp"
-
--- TODO: Install co-pilot. 
