@@ -25,16 +25,6 @@ wk.register({
     n = { "<cmd>bnext<cr>", "Next buffer."},
     p = { "<cmd>bprevious<cr>", "Previous buffer."},
   },
-  c = {
-    name = "LSP",
-    f = {"<cmd>lua vim.lsp.buf.format{ async = true}<cr>", "Format buffer" },
-    c = { 
-      e = { "<cmd> Copilot enable <cr>", "Enable co-pilot."},
-      d = { "<cmd> Copilot disable <cr>", "Disable co-pilot."}, 
-      s = { "<cmd> Copilot panel <cr>", "Open co-pilot panel."}
-      -- x = { "<cmd>", "Close the panel."}
-    }
-  },
   w = {
     name = "Window Managements",
     h = { "<C-w>h", "Focus left window."},
