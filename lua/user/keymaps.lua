@@ -54,6 +54,8 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
+keymap("n", "j", 'gj', opts)
+keymap("n", "k", 'gk', opts)
 
 -- Visual --
 -- Stay in indent mode

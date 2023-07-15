@@ -25,7 +25,7 @@ local diff = {
 
 local filetype = {
   "filetype",
-  icons_enabled = false,
+  icons_enabled = true
 }
 
 local location = {
@@ -39,7 +39,7 @@ end
 
 lualine.setup {
   options = {
-    globalstatus = true,
+    globalstatus = false,
     icons_enabled = true,
     theme = "auto",
     component_separators = { left = "", right = "" },
@@ -49,10 +49,18 @@ lualine.setup {
   },
   sections = {
     lualine_a = { "mode" },
-    lualine_b = {"branch"},
-    lualine_c = { diagnostics },
+    lualine_b = {"branch", "diagnostics"},
+    lualine_c = { "filename" },
     lualine_x = { diff, spaces, "encoding", filetype },
     lualine_y = { location },
     lualine_z = { "progress" },
   },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = { "filename" },
+    lualine_x = { location },
+    lualine_y = {},
+    lualine_z = {},
+  }
 }
