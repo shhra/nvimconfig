@@ -17,3 +17,4 @@ require "user.treesitter"
 
 -- custom folders
 require "user.lsp"
+require'nvim-tree'.setup {}

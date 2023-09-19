@@ -29,11 +29,11 @@ telescope.setup {
       hijack_netrw = true,
       mappings = {
         ["i"] = {
-          ["<S-CR>"] = fb_actions.create_from_prompt,
+          ["<C-CR>"] = fb_actions.create_from_prompt,
         },
         ["n"] = {
           -- your custom normal mode mappings
-          ["<S-CR>"] = fb_actions.create_from_prompt,
+          ["<C-CR>"] = fb_actions.create_from_prompt,
         },
       },
     },

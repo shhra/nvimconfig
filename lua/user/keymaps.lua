@@ -1,6 +1,16 @@
 local keymap = vim.keymap.set
 local wk = require("which-key")
 
+local function confirm_and_delete_buffer()
+  local confirm = vim.fn.confirm("Delete buffer and file?", "&y\n&No", 2)
+
+  if confirm == 1 then
+    os.remove(vim.fn.expand "%")
+    vim.api.nvim_buf_delete(0, { force = true })
+  end
+end
+
+
 -- Silent keymap option
 local opts = { silent = true }
 
@@ -27,6 +37,7 @@ wk.register({
   },
   w = {
     name = "Window Managements",
+    d = { "<C-w>q", "Close window."},
     h = { "<C-w>h", "Focus left window."},
     j = { "<C-w>j", "Focus down window."},
     k = { "<C-w>k", "Focus up window."},
@@ -39,8 +50,15 @@ wk.register({
     v = { "<C-w><C-v>", "Split window vertically."},
     c = { "<C-w><C-c>", "Close window."},
     r = { "<C-w><C-r>", "Rotate windows."},
+  },
+  f = {
+    name = "File Managements",
+    f = { "<cmd>Telescope find_files<cr>", "Find files."},
   }
+
 }, { prefix = "<leader>" })
+
+keymap("n", "<leader>fd", confirm_and_delete_buffer, opts)
 
 
 -- Resize with arrows
@@ -70,7 +88,8 @@ keymap("n", "<leader><leader>", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>/", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>pp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>bi", ":Telescope buffers<CR>", opts)
-keymap("n", "<leader>.", ":Telescope file_browser path=%:p:h<CR>", opts)
+keymap("n", "<leader>.", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", opts)
+
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)

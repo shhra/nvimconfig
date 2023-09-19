@@ -4,6 +4,8 @@ local servers = {
 	"jsonls",
 	"yamlls",
   "rust_analyzer",
+  "tsserver",
+  "eslint",
 }
 
 local settings = {
