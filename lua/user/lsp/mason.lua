@@ -34,6 +34,9 @@ end
 
 local opts = {}
 
+
+lspconfig.gdscript.setup{}
+
 for _, server in pairs(servers) do
 	opts = {
 		on_attach = require("user.lsp.handlers").on_attach,
