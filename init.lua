@@ -14,6 +14,7 @@ require "user.plugins"
 require "user.project"
 require "user.telescope"
 require "user.treesitter"
+require "user.iron"
 
 -- custom folders
 require "user.lsp"
