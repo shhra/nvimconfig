@@ -12,10 +12,10 @@ iron.setup {
         -- returns a table (see below)
         command = {"zsh"}
       },
-      python = {
-        command = "source ~/.virtualenvs/sd/bin/activate && python",
-        type = "bracketed"
-      }
+      -- python = {
+      --   command = "source ~/Envs/ml/bin/activate && python",
+      --   type = "bracketed"
+      -- }
     },
     -- How the repl window will be displayed
     -- See below for more information

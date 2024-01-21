@@ -5,7 +5,7 @@ local servers = {
 	"yamlls",
   "rust_analyzer",
   "tsserver",
-  "eslint",
+  "eslint"
 }
 
 local settings = {
